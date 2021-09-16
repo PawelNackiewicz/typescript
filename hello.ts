@@ -83,6 +83,27 @@ const carFromType: Car = {
 //   model: 'A4'
 // }
 
+//🚀  Konwersja typu
+
+type Fish = {
+  swim: Function;
+}
+type Bird = {
+  fly: Function
+}
+
+declare function getSmallPet() : Fish | Bird
+
+let pet = getSmallPet();
+let fishPet = pet as Fish;
+let birdPet = pet as Bird;
+ 
+if (fishPet.swim) {
+  fishPet.swim();
+} else if (birdPet.fly) {
+  birdPet.fly();
+}
+
 // 🚀  Typy generyczne
 
 // const fn = (x) => x
